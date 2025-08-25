@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.dto.Member;
+import com.example.demo.dto.Member2;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -52,7 +52,7 @@ public class ReceiveDataRestController {
   }
 
   @RequestMapping("/request-parameter2")
-  public Map<String, String> requestParameter2(@ModelAttribute Member member) {
+  public Map<String, String> requestParameter2(@ModelAttribute Member2 member) {
     Map<String, String> map = new HashMap<>();
     map.put("mid", member.getMid());
     map.put("mname", member.getMname());
@@ -62,7 +62,7 @@ public class ReceiveDataRestController {
   }
 
   @RequestMapping("/json")
-  public Map<String, String> json(@RequestBody Member member) {
+  public Map<String, String> json(@RequestBody Member2 member) {
     Map<String, String> map = new HashMap<>();
     map.put("mid", member.getMid());
     map.put("mname", member.getMname());
