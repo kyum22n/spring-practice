@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="card m-3">
+      <div class="card-header">Path Variable</div>
+      <div class="card-body">
+        <button onclick="func1()" class="btn btn-info btn-sm">URL에 값 1개를 전송</button>
+        <script>
+          async function func1() {
+            const response = await fetch("/receive-data-rest/path-variable1/5");
+            const json = await response.json();
+            console.log(json);
+          }
+        </script>
+
+        <button onclick="func2()" class="btn btn-info btn-sm">URL에 값 2개를 전송</button>
+        <script>
+          async function func2() {
+            const response = await fetch("/receive-data-rest/path-variable/q_and_a/5");
+            const json = await response.json();
+            console.log(json);
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>
